@@ -15,7 +15,7 @@ async def read_machines():
 
 @app.get("/machines/{machine_id}")
 async def read_machine(machine_id: int):
-    return (machine for machine in machine_list if machine["id"] == machine_id)
+    return (machine for machine in machine_list if machine.id == machine_id)
 
 @app.post("/machines/")
 async def create_machine(machine: Machine):
@@ -24,7 +24,15 @@ async def create_machine(machine: Machine):
 
 @app.put("/machines/{machine_id}")
 async def update_machine(machine_id: int, machine: Machine):
-    return {"machine_name": machine.name, "machine_id": machine_id}
+    for m in machine_list:
+        if m.id == machine_id:
+            m.name = machine.name
+            m.status = machine.status
+            m.latitude = machine.latitude
+            m.longitude = machine.longitude
+            m.last_updated = machine.last_updated
+            m.created = machine.created
+    return (machine for machine in machine_list if machine.id == machine_id)
 
 @app.delete("/machines/{machine_id}")
 async def delete_machine(machine_id: int):
