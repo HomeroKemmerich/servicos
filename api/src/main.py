@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from .models.machine import Machine
-
+from .data.machines import machine_list
 
 
 app = FastAPI()
@@ -9,22 +9,22 @@ app = FastAPI()
 async def root():
     return {"message": "API de serviços de máquinas"}
 
-@app.get("/items/")
-async def read_items():
-    return []
+@app.get("/machines/")
+async def read_machines():
+    return machine_list
 
-@app.get("/items/{machine_id}")
-async def read_item(machine_id: int):
-    return {"item_id": machine_id}
+@app.get("/machines/{machine_id}")
+async def read_machine(machine_id: int):
+    return {"machine_id": machine_id}
 
-@app.post("/items/")
-async def create_item(machine: Machine):
+@app.post("/machines/")
+async def create_machine(machine: Machine):
     return machine
 
-@app.put("/items/{machine_id}")
-async def update_item(machine_id: int, machine: Machine):
-    return {"item_name": machine.name, "item_id": machine_id}
+@app.put("/machines/{machine_id}")
+async def update_machine(machine_id: int, machine: Machine):
+    return {"machine_name": machine.name, "machine_id": machine_id}
 
-@app.delete("/items/{machine_id}")
-async def delete_item(machine_id: int):
-    return {"item_id": machine_id}
+@app.delete("/machines/{machine_id}")
+async def delete_machine(machine_id: int):
+    return {"machine_id": machine_id}
