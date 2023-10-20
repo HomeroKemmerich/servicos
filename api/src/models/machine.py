@@ -1,11 +1,12 @@
 from datetime import datetime
 from pydantic import BaseModel
+from typing import Optional
 
 class Machine(BaseModel):
-    id: int
+    id: Optional[int]
     name: str
-    lat: float
-    lon: float
     status: str
-    last_updated: datetime
-    created: datetime
+    latitude: float
+    longitude: float
+    last_updated: Optional[datetime]
+    created: Optional[datetime]

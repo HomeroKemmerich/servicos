@@ -15,10 +15,11 @@ async def read_machines():
 
 @app.get("/machines/{machine_id}")
 async def read_machine(machine_id: int):
-    return {"machine_id": machine_id}
+    return (machine for machine in machine_list if machine["id"] == machine_id)
 
 @app.post("/machines/")
 async def create_machine(machine: Machine):
+    machine_list.append(machine)
     return machine
 
 @app.put("/machines/{machine_id}")
