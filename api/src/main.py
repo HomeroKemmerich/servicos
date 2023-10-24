@@ -36,4 +36,7 @@ async def update_machine(machine_id: int, machine: Machine):
 
 @app.delete("/machines/{machine_id}")
 async def delete_machine(machine_id: int):
-    return {"machine_id": machine_id}
+    for m in machine_list:
+        if m.id == machine_id:
+            machine_list.remove(m)  
+    return []
