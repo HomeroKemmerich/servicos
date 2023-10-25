@@ -1,3 +1,7 @@
+'''
+@author Homero Kemmerich
+'''
+
 from fastapi import FastAPI
 from .models.machine import Machine
 from .data.machines import machine_list
