@@ -34,6 +34,10 @@ async def update_machine(machine_id: int, machine: Machine):
             m.created = machine.created
     return (machine for machine in machine_list if machine.id == machine_id)
 
-@app.delete("/machines/{machine_id}")
+@app.patch("/machines/{machine_id}")
 async def delete_machine(machine_id: int):
-    return {"machine_id": machine_id}
+    for m in machine_list:
+        if m.id == machine_id:
+            machine_list.remove(m)
+    return []
+
