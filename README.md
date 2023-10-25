@@ -6,7 +6,7 @@ Trabalho de serviços para a disciplina de Comunicação de Dados em Aplicaçõe
 
 ### API 
 
-- Inclua o trecho `--host [seu.endereço.ip]` no arquivo [run_api.sh] 
+- Atualize o trecho `[seu.endereço.ip]` no arquivo [run_api.sh] 
 - Execute a API utilizando o arquivo [run_api.sh]
 
 ### Firmware
