@@ -11,7 +11,7 @@ Trabalho de serviços para a disciplina de Comunicação de Dados em Aplicaçõe
 
 ### Firmware
 
-- Abra o [projeto]() na IDE PlatformIO
+- Abra o [projeto](./firmware/) na IDE PlatformIO
 - Carregue o projeto na ESP-32
 
 [run_api.sh]: ./run_api.sh
