@@ -4,4 +4,14 @@ Trabalho de serviços para a disciplina de Comunicação de Dados em Aplicaçõe
 
 ## Utilização
 
-Execute a API utilizando o arquivo `run_api.sh`
+### API 
+
+- Inclua o trecho `--host [seu.endereço.ip]` no arquivo [run_api.sh] 
+- Execute a API utilizando o arquivo [run_api.sh]
+
+### Firmware
+
+- Abra o [projeto]() na IDE PlatformIO
+- Carregue o projeto na ESP-32
+
+[run_api.sh]: ./run_api.sh
